@@ -7,3 +7,6 @@
 [submodule "sdl2"]
 	path = sdl2
 	url = https://github.com/sandstranger/SDL.git
+[submodule "sdl2-mixer/src/main/jni/SDL_mixer"]
+	path = sdl2-mixer/src/main/jni/SDL_mixer
+	url = https://github.com/sandstranger/SDL_mixer
