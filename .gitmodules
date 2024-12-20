@@ -1,3 +1,6 @@
 [submodule "app/src/main/jni/systemshock"]
 	path = app/src/main/jni/systemshock
 	url = https://github.com/sandstranger/systemshock.git
+[submodule "gl4es/src/main/jni/gl4es"]
+	path = gl4es/src/main/jni/gl4es
+	url = https://github.com/sandstranger/gl4es
