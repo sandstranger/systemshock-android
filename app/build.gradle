@@ -15,7 +15,26 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters = []
+            abiFilters.addAll(abi_filters)
+        }
+        externalNativeBuild {
+            cmake {
+                arguments"-DANDROID_PLATFORM=android-$versions.native_android_platform_version",
+                        "-DCMAKE_CXX_FLAGS=-O3 -ffast-math -flto=thin -DNDEBUG",
+                        "-DCMAKE_C_FLAGS=-O3 -ffast-math -flto=thin -DNDEBUG",
+                        "-DCMAKE_SHARED_LINKER_FLAGS=-flto=thin -Wl,-plugin-opt=-emulated-tls -fuse-ld=lld"
+
+            }
+        }
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "$rootProject.rootDir/CMakeLists.txt"
+        }
     }
 
     buildTypes {
@@ -34,16 +53,18 @@ android {
     buildFeatures {
         compose true
     }
+    buildToolsVersion versions.build_tools_version
+    ndkVersion versions.ndk_version
 }
 
 preBuild.dependsOn ":gl4es:build",
         ":sdl2-mixer:build",':sdl2:android-project:app:build'
 
 dependencies {
-
     implementation project(':sdl2:android-project:app')
     implementation project(':gl4es')
     implementation project(':sdl2-mixer')
+    implementation project(':fluidsynth')
 
     implementation libs.androidx.core.ktx
     implementation libs.androidx.lifecycle.runtime.ktx
