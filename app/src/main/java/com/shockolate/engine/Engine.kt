@@ -1,6 +1,7 @@
 package com.shockolate.engine
 
 import android.content.Context
+import android.os.Environment
 import android.os.Process
 import android.system.Os
 import android.view.View
@@ -32,6 +33,7 @@ internal fun setFullscreen(decorView: View) {
 fun killEngine() = Process.killProcess(Process.myPid())
 
 fun startEngine(context: Context) {
+    Os.setenv("GAME_PATH","${Environment.getExternalStorageDirectory().absolutePath}/shock/",true)
     Os.setenv("LIBGL_ES", "2", true)
     context.startActivity<EngineActivity>()
 }
