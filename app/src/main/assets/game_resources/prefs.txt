@@ -1,0 +1,17 @@
+language = 0
+capture-mouse = yes
+invert-mousey = no
+music-volume = 127
+sfx-volume = 100
+alog-volume = 100
+video-mode = 3
+half-resolution = no
+detail = 3
+use-opengl = yes
+texture-filter = 1
+onscreen-help = yes
+gamma = 78
+message-length = 0
+alog-setting = 1
+midi-backend = 2
+midi-output = 0

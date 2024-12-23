@@ -16,6 +16,11 @@ class EngineActivity : SDLActivity() {
         super.onCreate(savedInstanceState)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        killEngine()
+    }
+
     override fun getMainSharedObject() = MAIN_ENGINE_NATIVE_LIB
 
     override fun getLibraries() = jniLibsArray
