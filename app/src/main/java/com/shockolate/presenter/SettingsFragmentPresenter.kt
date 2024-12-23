@@ -5,9 +5,11 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Environment
 import com.shockolate.interfaces.SettingsFragmentMvpView
+import com.shockolate.ui.activity.ConfigureControlsActivity
 import com.shockolate.utils.GAME_FILES_FOLDER_NAME
 import com.shockolate.utils.GAME_FILES_SHARED_PREFS_KEY
 import com.shockolate.utils.copyGameAssets
+import com.shockolate.utils.startActivity
 import moxy.InjectViewState
 import moxy.MvpPresenter
 
@@ -15,7 +17,7 @@ import moxy.MvpPresenter
 class SettingsFragmentPresenter : MvpPresenter<SettingsFragmentMvpView>() {
 
     fun onConfigureScreenControlsClicked(context: Context) {
-      //  context.startActivity<ConfigureControlsActivity>(finishParentActivity = false)
+        context.startActivity<ConfigureControlsActivity>(finishParentActivity = false)
     }
 
     fun saveGamePath(data: Intent, context: Context, preferences: SharedPreferences) {
