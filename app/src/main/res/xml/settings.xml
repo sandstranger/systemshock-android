@@ -18,6 +18,70 @@
             android:key="text_localization"
             android:summary="%s"
             android:title="@string/text_localization_title" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="capture_mouse"
+            android:title="@string/capture_mouse" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="invert_mousey"
+            android:title="@string/invert_mouse" />
+        <EditTextPreference
+            android:dialogTitle="@string/music_volume"
+            android:key="music_volume"
+            android:defaultValue="100"
+            android:title="@string/music_volume" />
+        <EditTextPreference
+            android:dialogTitle="@string/sfx_volume"
+            android:key="sfx_volume"
+            android:defaultValue="100"
+            android:title="@string/sfx_volume" />
+        <EditTextPreference
+            android:dialogTitle="@string/sfx_volume"
+            android:key="alog_volume"
+            android:defaultValue="100"
+            android:title="@string/sfx_volume" />
+        <EditTextPreference
+            android:dialogTitle="@string/gamma"
+            android:key="gamma"
+            android:defaultValue="78"
+            android:title="@string/gamma" />
+        <ListPreference
+            android:defaultValue="@string/video_mode_entry"
+            android:dialogTitle="@string/videomode_title"
+            android:entries="@array/video_mode_entries"
+            android:entryValues="@array/video_mode_entries"
+            android:key="video_mode"
+            android:summary="%s"
+            android:title="@string/videomode_title" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="half_resolution"
+            android:title="@string/half_resolution" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="use_opengl"
+            android:title="@string/use_opengl" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="onscreen_help"
+            android:title="@string/onscreen_help" />
+        <ListPreference
+            android:defaultValue="@string/video_mode_entry"
+            android:dialogTitle="@string/detail"
+            android:entries="@array/video_mode_entries"
+            android:entryValues="@array/video_mode_entries"
+            android:key="detail"
+            android:summary="%s"
+            android:title="@string/detail" />
+        <ListPreference
+            android:defaultValue="1 => bilinear"
+            android:dialogTitle="@string/texture_filter_title"
+            android:entries="@array/textures_filter_entries"
+            android:entryValues="@array/textures_filter_entries"
+            android:key="texture_filter"
+            android:summary="%s"
+            android:title="@string/texture_filter_title" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/user_interface">

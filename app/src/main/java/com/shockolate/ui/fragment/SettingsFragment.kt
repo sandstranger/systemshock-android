@@ -15,6 +15,7 @@ import com.shockolate.R
 import com.shockolate.interfaces.SettingsFragmentMvpView
 import com.shockolate.utils.CUSTOM_RESOLUTION_PREFS_KEY
 import com.shockolate.utils.GAME_FILES_SHARED_PREFS_KEY
+import com.shockolate.utils.changeInputTypeToDecimal
 import com.shockolate.utils.setHint
 import moxy.presenter.InjectPresenter
 
@@ -52,7 +53,11 @@ class SettingsFragment : MvpAppCompatFragment(), SettingsFragmentMvpView,
         customResolution?.setHint(R.string.custom_resolution_hint)
 
         updatePreference(customResolution!!, CUSTOM_RESOLUTION_PREFS_KEY)
-//        updatePreference(hudScale!!, "hud_scale")
+
+        updateEditTextPreference("music_volume")
+        updateEditTextPreference("sfx_volume")
+        updateEditTextPreference("alog_volume")
+        updateEditTextPreference("gamma")
 
         setHasOptionsMenu(true)
     }
@@ -108,5 +113,11 @@ class SettingsFragment : MvpAppCompatFragment(), SettingsFragmentMvpView,
         catch (e: Exception){
 
         }
+    }
+
+    private fun updateEditTextPreference(prefsKey: String){
+        val editTextPreference = findPreference<EditTextPreference>(prefsKey)!!
+        editTextPreference.changeInputTypeToDecimal()
+        updatePreference(editTextPreference,prefsKey)
     }
 }

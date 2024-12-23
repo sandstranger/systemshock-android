@@ -5,6 +5,15 @@
     <string name="user_interface">User interface</string>
     <string name="copy_game_assets">Reset game assets</string>
     <string name="hide_screen_controls">Hide screen controls</string>
+    <string name="capture_mouse">Capture mouse</string>
+    <string name="invert_mouse">Invert mouse y</string>
+    <string name="half_resolution">Half resolution</string>
+    <string name="use_opengl">Use opengl</string>
+    <string name="onscreen_help">Onscreen help</string>
+    <string name="music_volume">Music Volume</string>
+    <string name="sfx_volume">Sfx Volume</string>
+    <string name="gamma">Gamma</string>
+    <string name="alog_volume">A Log Volume</string>
     <string name="display_cutout_area">Display in cutout area</string>
     <string name="configure_screen_controls">Configure screen controls</string>
     <string name="graphics">Graphics</string>
@@ -17,16 +26,32 @@
     <string name="btn_sizePlus">Size+</string>
     <string name="btn_sizeMinus">Size-</string>
     <string name="btn_resetControlsLayout">Reset to defaults</string>
-    <string name="text_localization_default_entry">english</string>
+    <string name="text_localization_default_entry">0 - English</string>
+    <string name="video_mode_entry">3 - Max</string>
     <string name="command_line">Custom cmd args</string>
     <string name="custom_resolution_hint">640x480</string>
     <string name="start_game">Start Game</string>
     <string name="text_localization_title">Text localization</string>
+    <string name="videomode_title">Video Mode</string>
+    <string name="detail">Detail</string>
+    <string name="texture_filter_title">Texture filter</string>
 
     <string-array name="text_localization_entries">
         <item>0 - English</item>
         <item>1 - French</item>
         <item>2 - German</item>
+    </string-array>
+
+    <string-array name="textures_filter_entries">
+        <item>0 => unfiltered</item>
+        <item>1 => bilinear</item>
+    </string-array>
+
+    <string-array name="video_mode_entries">
+        <item>0 - Min</item>
+        <item>1 - Low</item>
+        <item>2 - High</item>
+        <item>3 - Max</item>
     </string-array>
 
 </resources>
