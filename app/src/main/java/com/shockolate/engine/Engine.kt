@@ -8,10 +8,7 @@ import android.view.View
 import androidx.preference.PreferenceManager
 import com.shockolate.engine.activity.EngineActivity
 import com.shockolate.utils.GAME_FILES_SHARED_PREFS_KEY
-import com.shockolate.utils.HIDE_SCREEN_CONTROLS_KEY
-import com.shockolate.utils.SHOCK_DATA_PATH_KEY
 import com.shockolate.utils.startActivity
-import java.io.File
 
 
 internal val jniLibsArray= arrayOf("c++_shared","omp","FLAC","gio-2.0","glib-2.0","gmodule-2.0","gobject-2.0",
@@ -33,7 +30,9 @@ internal fun setFullscreen(decorView: View) {
 fun killEngine() = Process.killProcess(Process.myPid())
 
 fun startEngine(context: Context) {
-    Os.setenv("GAME_PATH","${Environment.getExternalStorageDirectory().absolutePath}/shock/",true)
+    val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+    val gamePath  = prefs.getString(GAME_FILES_SHARED_PREFS_KEY, "")
+    Os.setenv("GAME_PATH","${gamePath}/",true)
     Os.setenv("LIBGL_ES", "2", true)
     context.startActivity<EngineActivity>()
 }

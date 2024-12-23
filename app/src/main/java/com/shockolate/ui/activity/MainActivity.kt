@@ -1,8 +1,10 @@
 package com.shockolate.ui.activity
 
 import android.os.Bundle
+import com.shockolate.R
 import com.shockolate.presenter.MainActivityPresenter
 import com.shockolate.databinding.MainActivityBinding
+import com.shockolate.ui.fragment.SettingsFragment
 import moxy.MvpAppCompatActivity
 import moxy.MvpView
 import moxy.presenter.InjectPresenter
@@ -21,10 +23,10 @@ internal class MainActivity : MvpAppCompatActivity(), MvpView {
         }
 
         presenter.requestExternalStorage(this)
-        //changeFragment()
+        changeFragment()
     }
 
-/*    private fun changeFragment() {
+    private fun changeFragment() {
         val fragmentContainterResId = R.id.fragments_container
         var fragment = supportFragmentManager.findFragmentById(fragmentContainterResId)
 
@@ -35,5 +37,5 @@ internal class MainActivity : MvpAppCompatActivity(), MvpView {
                 commit()
             }
         }
-    }*/
+    }
 }
