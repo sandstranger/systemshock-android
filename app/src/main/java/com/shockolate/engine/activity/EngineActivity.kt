@@ -10,8 +10,6 @@ import com.shockolate.engine.setFullscreen
 import com.shockolate.utils.MAIN_ENGINE_NATIVE_LIB
 import com.shockolate.utils.displayInCutoutArea
 import org.libsdl.app.SDLActivity
-import java.io.IOException
-import java.util.Arrays
 
 
 class EngineActivity : SDLActivity() {
@@ -61,8 +59,7 @@ class EngineActivity : SDLActivity() {
 
     private fun createProcess(pathToLog: String): Process {
         val processBuilder = ProcessBuilder()
-        val commandToExecute = listOf("/system/bin/sh", "-c", "logcat *:W -d -f $pathToLog")
-        processBuilder.command(commandToExecute)
+        processBuilder.command("/system/bin/sh", "-c", "logcat *:W -d -f $pathToLog")
         processBuilder.redirectErrorStream(true)
         return processBuilder.start()
     }
